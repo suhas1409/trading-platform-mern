@@ -1,6 +1,6 @@
 # 📈 TradingApp (Frontend + Backend)
 
-A full-stack stock trading platform (Frontpage-style clone) built using the **MERN stack**.  
+A full-stack stock trading platform built using the **MERN stack**.  
 This project is being developed incrementally with a focus on **clean architecture, authentication, and real-world practices**.
 
 ---
