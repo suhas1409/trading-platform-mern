@@ -1,0 +1,114 @@
+.watchlist {
+  width: 100%;
+  height: calc(100vh - 64px);
+  border-radius: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+
+  .watchlistHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111827;
+    }
+  }
+
+  .searchBox {
+    position: relative;
+    margin-bottom: 14px;
+    
+    .searchIcon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #9ca3af;
+    }
+    
+    input {
+      width: 100%;
+      padding: 8px 10px 8px 32px; 
+      font-size: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      outline: none;
+
+      &:focus {
+        border-color: #111827;
+      }
+    }
+  }
+
+  .stockList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+
+    .stockItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 6px;
+      border-bottom: 1px solid #f3f4f6;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      
+      &:hover {
+        background-color: #f9fafb;
+      }
+
+      .stockInfo {
+        display: flex;
+        flex-direction: column;
+
+        .symbol {
+          font-size: 13px;
+          font-weight: 600;
+          color: #111827;
+        }
+
+        .exchange {
+          font-size: 11px;
+          color: #6b7280;
+        }
+      }
+
+      .stockPrice {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .price {
+          font-size: 13px;
+          font-weight: 600;
+          color: #111827;
+        }
+
+        .change {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .positive {
+      .change {
+        color: #16a34a;
+      }
+    }
+
+    .negative {
+      .change {
+        color: #dc2626;
+      }
+    }
+  }
+}
