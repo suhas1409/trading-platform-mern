@@ -1,7 +1,7 @@
 # 📈 TradingApp (Frontend + Backend)
 
 A full-stack stock trading platform built using the **MERN stack**.  
-This project is being developed incrementally with a focus on **clean architecture, authentication, and real-world practices**.
+This project is being developed incrementally with a focus on **clean architecture, authentication, dashboard UI design, and real-world practices**.
 
 ---
 
@@ -15,7 +15,12 @@ This project is being developed incrementally with a focus on **clean architectu
 - Auto-login after registration
 - Secure password hashing using bcrypt
 
----
+### 🖥️ Dashboard UI (Completed – Desktop)
+- Navbar with market indices and navigation
+- Watchlist panel (left section)
+- Overview section (right section)
+- Component-based UI structure
+- SCSS-based styling
 
 ## 🛠 Tech Stack
 
@@ -41,11 +46,14 @@ This project is being developed incrementally with a focus on **clean architectu
 TradingApp/
 │
 ├── client/        # React frontend
+│   ├── public/
+│   │   └── favicon.png
 │   ├── src/
 │   │   ├── pages/
 │   │   ├── components/
 │   │   ├── services/
-│   │   └── styles/
+│   │   ├── assets/
+│   │   └── index.scss/
 │   └── package.json
 │
 ├── server/        # Node + Express backend
