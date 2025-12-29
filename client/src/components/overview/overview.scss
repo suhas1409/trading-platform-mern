@@ -1,3 +1,5 @@
+@use "../../responsive.scss" as *;
+
 .overview {
   padding: 24px;
   display: flex;
@@ -89,5 +91,9 @@
         transform: scale(1.02);
       }
     }
+  }
+
+  @include sm {
+    display: none;
   }
 }

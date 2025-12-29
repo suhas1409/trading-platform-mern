@@ -1,9 +1,12 @@
 import "./navbar.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import logo from "../../assets/logo.png"
 
 export const Navbar = () => {
+
+  const location = useLocation();
+  
   return (
     <nav className="navbar">
       {/* Market Index Bar */}
@@ -31,10 +34,21 @@ export const Navbar = () => {
         </Link>
         
         <ul className="menu">
-          <li className="navLink"><Link to="/">Dashboard</Link></li>
-          <li className="navLink"><Link to="/orders">Orders</Link></li>
-          <li className="navLink"><Link to="/holdings">Holdings</Link></li>
-          <li className="navLink"><Link to="/positions">Positions</Link></li>
+          <li className={`navLink ${location.pathname === "/" ? "active" : ""}`}>
+            <Link to="/">Dashboard</Link>
+          </li>
+
+          <li className={`navLink ${location.pathname === "/orders" ? "active" : ""}`}>
+            <Link to="/orders">Orders</Link>
+          </li>
+
+          <li className={`navLink ${location.pathname === "/portfolio" ? "active" : ""}`}>
+            <Link to="/portfolio">Portfolio</Link>
+          </li>
+
+          <li className={`navLink ${location.pathname === "/positions" ? "active" : ""}`}>
+            <Link to="/positions">Positions</Link>
+          </li>
         </ul>
 
         {/* Profile */}

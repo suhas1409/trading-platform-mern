@@ -1,6 +1,7 @@
 import React from 'react'
 import "./watchlist.scss"
 import { FaSearch } from 'react-icons/fa'
+import { BottomNav } from '../bottomNav/BottomNav'
 
 export const Watchlist = () => {
   return (
@@ -50,6 +51,7 @@ export const Watchlist = () => {
           </div>
         </li>
       </ul>
+      <BottomNav />
     </div>
   )
 }

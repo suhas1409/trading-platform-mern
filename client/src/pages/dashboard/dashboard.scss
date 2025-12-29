@@ -1,3 +1,5 @@
+@use "../../responsive.scss" as *;
+
 .dashboard {
   width: 100%;
   height: 100vh;
@@ -16,12 +18,26 @@
       background-color: #ffffff;
       border-right: 1px solid #e5e7eb;
       overflow-y: auto;
+
+      @include sm {
+        width: 100%;
+        display: block;
+      }
     }
 
     .overviewSection {
       flex: 1;
       padding: 24px;
       overflow-y: auto;
+
+      @include sm {
+        display: none;
+      }
     }
   }
+
+  @include sm {
+    flex-direction: column;
+  }
 }
+
