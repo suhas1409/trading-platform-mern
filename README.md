@@ -5,7 +5,7 @@ This project is being developed incrementally with a focus on **clean architectu
 
 ---
 
-## 🚀 Features Implemented (Phase 1)
+## 🚀 Features Implemented
 
 ### 🔐 Authentication (Completed)
 - User Registration
@@ -21,6 +21,12 @@ This project is being developed incrementally with a focus on **clean architectu
 - Overview section (right section)
 - Component-based UI structure
 - SCSS-based styling
+
+### 📱 Mobile UI (In Progress)
+- Mobile-friendly Watchlist screen
+- Bottom navigation bar
+- Responsive layout using media queries
+- Shared components across desktop & mobile
 
 ## 🛠 Tech Stack
 
@@ -45,18 +51,19 @@ This project is being developed incrementally with a focus on **clean architectu
 ```bash
 TradingApp/
 │
-├── client/        # React frontend
+├── client/                 # React frontend
 │   ├── public/
 │   │   └── favicon.png
 │   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── services/
-│   │   ├── assets/
-│   │   └── index.scss/
+│   │   ├── pages/          # Login, Register, Dashboard
+│   │   ├── components/     # Navbar, Watchlist, Overview, BottomNav, MobileTopBar, ProtectedRoute
+│   │   ├── services/       # API service layer
+│   │   ├── assets/         # Images & icons
+│   │   ├── index.scss      # Global styles
+│   │   └── responsive.scss # Media query helpers
 │   └── package.json
 │
-├── server/        # Node + Express backend
+├── server/                 # Node + Express backend
 │   ├── models/
 │   ├── routes/
 │   ├── controllers/
