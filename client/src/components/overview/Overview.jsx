@@ -1,12 +1,12 @@
 import React from 'react'
 import "./overview.scss";
 
-export const Overview = () => {
+export const Overview = ({user}) => {
   return (
     <div className='overview'>
       {/*Greeting and Overview header*/}
       <div className="overviewHeader">  
-        <h2>Hi, Suhas</h2>
+        <h2>Hi, {user?.username || "Trader"}</h2>
         <p className="subtitle">Here's a quick snapshot of your account</p>
       </div>
       {/*Summary Card*/}

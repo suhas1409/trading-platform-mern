@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken } from "../utils/auth";
 
 const API_URL = "http://localhost:5000/api/auth";
 
@@ -15,11 +16,14 @@ export const loginUser = async (userData) => {
 };
 
 //Get logged-in User
-export const getUser = async (token) => {
+export const getUser = async () => {
+  const token = getToken();
+
   const response = await axios.get(`${API_URL}/user`,{
-    header: {
+    headers: {
       Authorization: `Bearer ${token}`,
     },
   });
   return response.data;
 };
+

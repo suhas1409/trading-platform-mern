@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import logo from "../../assets/logo.png"
 
-export const Navbar = () => {
+export const Navbar = ({user}) => {
 
   const location = useLocation();
   
@@ -55,7 +55,7 @@ export const Navbar = () => {
         <div className="profile">
           <Link to="/profile" className="profileLink">
             <FaUserCircle className="profileIcon"/>
-            <span className="username">Suhas</span>
+            <span className="username">{user?.username || "Profile"}</span>
           </Link>
         </div>
       </div>

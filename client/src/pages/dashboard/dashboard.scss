@@ -8,34 +8,6 @@
   flex-direction: column;
   padding: 0px 20px;
 
-  .dashboardContent {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-    
-    .watchListSection {
-      width: 25%;
-      background-color: #ffffff;
-      border-right: 1px solid #e5e7eb;
-      overflow-y: auto;
-
-      @include sm {
-        width: 100%;
-        display: block;
-      }
-    }
-
-    .overviewSection {
-      flex: 1;
-      padding: 24px;
-      overflow-y: auto;
-
-      @include sm {
-        display: none;
-      }
-    }
-  }
-
   @include sm {
     flex-direction: column;
   }
