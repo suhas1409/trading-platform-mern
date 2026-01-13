@@ -44,12 +44,14 @@
         font-weight: bold;
         border: none;
         cursor: pointer;
-        transition: background 0.2s;
+        transition: background 0.2s ease, transform 0.2 ease;
 
         &:hover {
           background-color: #1e40af;
+          transform: scale(1.02);
         }
       }
+      
       a{
         color: #1e40af;
       }

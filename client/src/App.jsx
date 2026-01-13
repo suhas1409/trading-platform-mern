@@ -5,6 +5,8 @@ import { Dashboard } from './pages/dashboard/Dashboard';
 import { ProtectedRoute } from './components/protectedRoute/ProtectedRoute';
 import { Profile } from "./pages/profile/profile";
 import { Layout } from "./pages/layout/layout";
+import { Orders } from "./pages/orders/Orders";
+
 export const App = () => {
     const router = createBrowserRouter([
       {
@@ -24,6 +26,14 @@ export const App = () => {
             element: (
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            )
+          },
+          {
+            path:"/orders",
+            element: (
+              <ProtectedRoute>
+                <Orders />
               </ProtectedRoute>
             )
           },

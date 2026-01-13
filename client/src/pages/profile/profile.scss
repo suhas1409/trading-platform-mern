@@ -1,9 +1,9 @@
 @use "../../responsive.scss" as *;
 
 .profilePage {
+  height: 100%;
   padding: 24px;
   background-color: #f9fafb;
-  height: 100%;
 
   .title {
     font-size: 22px;
@@ -65,7 +65,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 32px;
 
     .title {
       font-size: 16px;

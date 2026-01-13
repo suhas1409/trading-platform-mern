@@ -1,0 +1,102 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+
+  .modalCard {
+    width: 360px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    .modalHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .closeIcon {
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.2s, transform 0.2s ease;
+        
+        &:hover {
+          color: #111827;
+          transform: scale(1.08);
+        }
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      lable {
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #d1d5db;
+        font-size: 14px;
+
+        &:disabled {
+          background-color: #f3f4f6;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    .action {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+
+      button {
+        flex: 1;
+        padding: 8px;
+        font-size: 13px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: color 0.2s, transform 0.2s ease;
+      }
+
+      .updateBtn {
+        background-color: #2563eb;
+        color: white;
+
+        &:hover {
+          background-color: #1e40af;
+          transform: scale(1.02);
+        }
+      }
+
+      .cancelBtn {
+        background-color: #dc2626;
+        color: white;
+
+        &:hover {
+          background-color: #b91c1c;
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ export const Profile = () => {
 
   return (
     <div className="profilePage">
-      <h2 className="title">Profile</h2>
+      <h3 className="title">Profile</h3>
 
       <div className="profileCard">
         <div className="row">

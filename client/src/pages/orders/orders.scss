@@ -1,0 +1,127 @@
+@use "../../responsive.scss" as *;
+
+.ordersPage {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 24px;
+
+  .ordersHeader {
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #6b7280;
+    }
+  }
+
+  .orderList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .orderRow {
+    display: grid;
+    grid-template-columns: 160px 1fr 120px;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0 10px 3px rgba(0, 0, 0, 0.05);
+
+    .orderInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .symbol {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .type {
+        font-size: 12px;
+        font-weight: 500;
+
+        &.buy {
+          color: #16a34a;
+        }
+
+        &.sell {
+          color: #dc2626;
+        }
+      }
+    }
+  } 
+
+  .orderRow.clickable {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f9fafb;
+    }
+  }
+
+  .orderMeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    color: #374151;
+  }
+
+  .orderActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+
+    .status {
+      font-size: 12px;
+      font-weight: 600;
+      text-align: right;
+
+      &.executed {
+        color: #16a34a;
+      }
+
+      &.open {
+        color: #2563eb;
+      }
+
+      &.cancelled {
+        color: #dc2626;
+      }
+    }
+  }
+
+  @include sm {
+    padding-bottom: 70px;
+    
+    .ordersPage {
+      h2 {
+        font-size: 16px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .orderRow {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        .orderActions {
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

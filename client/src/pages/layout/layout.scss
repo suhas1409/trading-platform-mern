@@ -8,6 +8,10 @@
   flex-direction: column;
   padding: 0 20px;
 
+  @include sm {
+    height: calc(100vh - 60px);
+  }
+
   .layoutContent {
     display: flex;
     flex: 1;
@@ -45,6 +49,7 @@
     /*Content visible */
     .content {
       display: block;
+      padding: 0;
     }
   }
 
