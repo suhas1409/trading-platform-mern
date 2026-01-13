@@ -28,6 +28,15 @@ This project is being developed incrementally with a focus on **clean architectu
 - Responsive layout using media queries
 - Shared components across desktop & mobile
 
+🧾 Orders (UI Completed)
+-Order status indicators (OPEN / EXECUTED / CANCELLED)
+-Click-to-modify OPEN orders
+-Modify Order modal
+-Editable quantity
+-ESC key close
+-Backdrop click close
+-Close (✕) icon
+
 ## 🛠 Tech Stack
 
 ### Frontend
@@ -55,8 +64,8 @@ TradingApp/
 │   ├── public/
 │   │   └── favicon.png
 │   ├── src/
-│   │   ├── pages/          # Login, Register, Dashboard
-│   │   ├── components/     # Navbar, Watchlist, Overview, BottomNav, MobileTopBar, ProtectedRoute
+│   │   ├── pages/          # Login, Register, Dashboard, Profile, Orders
+│   │   ├── components/     # Navbar, Watchlist, Overview, BottomNav, MobileTopBar, ProtectedRoute, OrderModal
 │   │   ├── services/       # API service layer
 │   │   ├── assets/         # Images & icons
 │   │   ├── index.scss      # Global styles
