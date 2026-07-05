@@ -7,7 +7,7 @@
   gap: 24px;
 
   .ordersHeader {
-    h2 {
+    h3 {
       font-size: 22px;
       font-weight: 600;
       color: #111827;
@@ -102,24 +102,40 @@
 
   @include sm {
     padding-bottom: 70px;
+    gap: 16px;
     
-    .ordersPage {
-      h2 {
+    .ordersHeader {
+      h3 {
         font-size: 16px;
       }
 
       .subtitle {
         font-size: 13px;
       }
+    }
 
-      .orderRow {
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .orderRow {
+      grid-template-columns: 1fr;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
 
-        .orderActions {
-          flex-direction: row;
-          justify-content: center;
-          width: 100%;
+      .orderInfo {
+        width: 100%;
+      }
+
+      .orderMeta {
+        width: 100%;
+        align-items: flex-start;
+        font-size: 13px;
+      }
+
+      .orderActions {
+        width: 100%;
+        justify-content: flex-start;
+
+        .status {
+          min-width: auto;
         }
       }
     }

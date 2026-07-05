@@ -1,0 +1,335 @@
+@use "../../responsive.scss" as *;
+
+.positionsPage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .positionsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .pnlCard {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 15px;
+        color: #6b7280;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .positionsTableHeader {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 32px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+  }
+
+  .positionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+
+    .positionsRow {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 32px;
+      background-color: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      align-items: center;
+
+      &:hover {
+        background-color: #f3f4f6;
+      }
+
+      .symbol {
+        font-weight: 600;
+        color: #111827;
+      }
+
+      .type {
+        font-weight: 600;
+
+        &.buy {
+          color: #16a34a;
+        }
+
+        &.sell {
+          color: #dc2626;
+        }
+      }
+
+      .expandIcon {
+        justify-self: center;
+        font-size: 14px;
+        color: #6b7280;
+        transition: transform 0.2s ease;
+      }
+
+      &.expanded {
+        .expandIcon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .positionCard {
+      display: none;
+
+      background: #fff;
+      border-radius: 10px;
+      padding: 19px;
+
+      .topRow {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      .left {
+        .avg {
+          font-size: 13px;
+          color: #6b7280;
+        }
+        
+        h3 {
+          font-size: 20px;
+          margin-top: 8px;
+        }
+
+        .qty {
+          font-size: 13px;
+          color: #6b7280;
+          margin-top: 8px;
+        }
+      }
+
+      .right {
+        text-align: right;
+
+        .tag {
+          padding: 4px 10px;
+          border-radius: 5px;
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        .buy {
+          color: #2563eb;
+          background: #dbeafe;
+        }
+
+        .sell {
+          color: #dc2626;
+          background: #fee2e2;
+        }
+
+        h3 {
+          margin-top: 12px;
+        }
+
+        p {
+          margin-top: 6px;
+          color: #6b7280;
+        }
+      }
+    }
+
+    .positionExpand {
+      background-color: #f9fafb;
+      border-radius: 0 0 8px 8px;
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid #e5e7eb;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        span {
+          font-size: 12px;
+          color: #6b7280;
+        }
+
+        strong {
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+
+      .actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+
+        button {
+          padding: 6px 16px;
+          font-size: 13px;
+          font-weight: 600;
+          border-radius: 6px;
+          cursor: pointer;
+          border: none;
+          white-space: nowrap;
+          transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .buyBtn {
+          background-color: #2563eb;
+          color: #ffffff;
+
+          &:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.02);
+          }
+        }
+       
+        .sellBtn {
+          background-color: #dc2626;
+          color: #ffffff;
+
+          &:hover {
+            background-color: #b91c1c;
+            transform: scale(1.02);
+          }
+        }
+
+        .exitBtn {
+          background: #e5e7eb;
+          color: #374151;
+          border: 1px solid #374151;
+
+          &:hover {
+            background-color: #d1d5db;
+            color: #111827;
+            transform: scale(1.02);
+          }
+        }
+
+        .chartBtn {
+          background: #ffffff;
+          color: #2563eb;
+          border: 1px solid #2563eb;
+
+          &:hover {
+            background: #eff6ff;
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+  }
+
+  .emptyPositions {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+  }
+
+  .positive {
+    color: #16a34a;
+    font-weight: 600;
+  }
+
+  .negative {
+    color: #dc2626;
+    font-weight: 600;
+  }
+
+  @include sm {
+    padding: 32px;
+    
+    .positionsHeader {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+
+      h3 {
+        text-align:center;
+        font-size:20px;
+        font-weight: 600;
+      }
+  
+      .pnlCard {
+        display:block;
+        width:100%;
+        background:#f8fafc;
+        border:1px solid #e2e8f0;
+        border-radius:16px;
+        padding:28px;
+        text-align:center;
+        box-shadow:0 2px 8px rgba(0,0,0,.06);
+
+        span{
+          display:block;
+          font-size:18px;
+          color:#64748b;
+          margin-bottom:10px;
+        }
+
+        h2{
+          margin:0;
+          font-size:26px;
+          // font-weight:600;
+        }
+      }
+    }  
+
+    .positionsTableHeader {
+      display: none;
+    }
+
+    .positionsList {
+      .positionsRow {
+        display: none;
+      }
+
+      .positionCard {
+        display: block;
+      }
+
+      .positionExpand {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

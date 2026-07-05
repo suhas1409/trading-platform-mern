@@ -28,6 +28,9 @@ export const AuthProvider = ({children}) => {
         setUser(userData);
       } catch (error) {
         console.error("Auth load failed", error);
+        if(error.response?.status === 401) {
+          localStorage.removeItem("token");
+        }
         setUser(null);
       } finally {
         setLoading(false);

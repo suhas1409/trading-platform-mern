@@ -1,0 +1,488 @@
+@use "../../responsive.scss" as *;
+
+.portfolioPage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .portfolioHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .pnlCard {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      span {
+        font-size: 15px;
+        color: #6b7280;
+      }
+
+      .pnlValues {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+
+        h2 {
+          margin: 0;
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 1;
+        }
+
+        p {
+          margin: 0;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  .portfolioTableHeader {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 32px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+  }
+
+  .portfolioList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+
+    .portfolioRow {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr 32px;
+      background-color: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      align-items: center;
+      border: 1px solid #e5e7eb;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #f3f4f6;
+      }
+
+      .symbol {
+        font-weight: 600;
+        color: #111827;
+      }
+
+      .expandIcon {
+        justify-self: center;
+        font-size: 14px;
+        color: #6b7280;
+        transition: transform 0.2s ease;
+      }
+
+      &.expanded {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        .expandIcon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .portfolioCard {
+      display: none;
+      background: #fff;
+      border-radius: 10px;
+      padding: 19px;
+      border: 1px solid #e5e7eb;
+
+      .topRow {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .left {
+        .avg {
+          font-size: 13px;
+          color: #6b7280;
+          margin: 0;
+        }
+
+        h3 {
+          font-size: 20px;
+          margin-top: 8px;
+          margin-bottom: 0;
+          color: #111827;
+        }
+
+        .qty {
+          font-size: 13px;
+          color: #6b7280;
+          margin-top: 8px;
+          margin-bottom: 0;
+        }
+      }
+
+      .right {
+        text-align: right;
+
+        h3 {
+          margin: 0;
+          font-size: 18px;
+        }
+
+        p {
+          margin-top: 6px;
+          margin-bottom: 0;
+          color: #6b7280;
+          font-size: 13px;
+        }
+
+        span {
+          display: inline-block;
+          margin-top: 8px;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .portfolioExpand {
+      background-color: #f9fafb;
+      border-radius: 0 0 8px 8px;
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #e5e7eb;
+      border-top: none;
+      margin-top: -10px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        span {
+          font-size: 12px;
+          color: #6b7280;
+        }
+
+        strong {
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+
+      .actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+
+        button {
+          padding: 6px 16px;
+          font-size: 13px;
+          font-weight: 600;
+          border-radius: 6px;
+          cursor: pointer;
+          border: none;
+          white-space: nowrap;
+          transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .buyBtn {
+          background-color: #2563eb;
+          color: #ffffff;
+
+          &:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.02);
+          }
+        }
+
+        .exitBtn {
+          background: #e5e7eb;
+          color: #374151;
+          border: 1px solid #374151;
+
+          &:hover {
+            background-color: #d1d5db;
+            color: #111827;
+            transform: scale(1.02);
+          }
+        }
+
+        .chartBtn {
+          background: #ffffff;
+          color: #2563eb;
+          border: 1px solid #2563eb;
+
+          &:hover {
+            background: #eff6ff;
+            transform: scale(1.02);
+          }
+        }
+      }
+    }
+  }
+
+  .portfolioSummary {
+    margin-top: 8px;
+    padding: 16px 18px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    .summary {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      span {
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      strong {
+        font-size: 15px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      &:nth-child(1) {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      &:nth-child(2) {
+        align-items: center;
+        text-align: center;
+      }
+
+      &:nth-child(3) {
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+  }
+
+  .emptyPortfolio {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+  }
+
+  .positive {
+    color: #16a34a;
+    font-weight: 600;
+  }
+
+  .negative {
+    color: #dc2626;
+    font-weight: 600;
+  }
+
+  @include sm {
+    padding: 32px;
+    padding-bottom: 150px;
+
+    .portfolioHeader {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+
+      h3 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .pnlCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 28px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        gap: 10px;
+
+        span {
+          font-size: 18px;
+          color: #64748b;
+          margin: 0;
+        }
+
+        .pnlValues {
+          display: flex;
+          align-items: baseline;
+          justify-content: center;
+          gap: 8px;
+
+          h2 {
+            margin: 0;
+            font-size: 26px;
+          }
+
+          p {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .portfolioTableHeader {
+      display: none;
+    }
+
+    .portfolioList {
+      .portfolioRow {
+        display: none;
+      }
+
+      .portfolioCard {
+        display: block;
+      }
+
+      .portfolioExpand {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .expandStats {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+
+          .statItem {
+            min-width: 0;
+            text-align: center;
+            padding: 4px 6px;
+
+            span {
+              display: block;
+              font-size: 11px;
+              color: #6b7280;
+              margin-bottom: 4px;
+            }
+
+            strong {
+              display: block;
+              font-size: 13px;
+              font-weight: 600;
+              line-height: 1.2;
+              word-break: break-word;
+            }
+          }
+        }
+
+        .actions {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          width: 100%;
+
+          button {
+            width: 100%;
+            min-width: 0;
+            padding: 8px 10px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .portfolioSummary {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 60px;
+      z-index: 20;
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      border-left: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.08);
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+
+      .summary {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        span {
+          font-size: 11px;
+          color: #6b7280;
+          font-weight: 500;
+        }
+
+        strong {
+          font-size: 13px;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        &:nth-child(1) {
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        &:nth-child(2) {
+          align-items: center;
+          text-align: center;
+        }
+
+        &:nth-child(3) {
+          align-items: flex-end;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

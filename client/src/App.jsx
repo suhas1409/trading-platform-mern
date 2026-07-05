@@ -6,6 +6,9 @@ import { ProtectedRoute } from './components/protectedRoute/ProtectedRoute';
 import { Profile } from "./pages/profile/profile";
 import { Layout } from "./pages/layout/layout";
 import { Orders } from "./pages/orders/Orders";
+import { Portfolio } from "./pages/portfolio/Portfolio";
+import { Positions } from "./pages/positions/Positions";
+import { ChartPage } from "./pages/chartPage/ChartPage";
 
 export const App = () => {
     const router = createBrowserRouter([
@@ -34,6 +37,30 @@ export const App = () => {
             element: (
               <ProtectedRoute>
                 <Orders />
+              </ProtectedRoute>
+            )
+          },
+          {
+            path:"/portfolio",
+            element: (
+              <ProtectedRoute>
+                <Portfolio />
+              </ProtectedRoute>
+            )
+          },
+          {
+            path:"/positions",
+            element: (
+              <ProtectedRoute>
+                <Positions />
+              </ProtectedRoute>
+            )
+          },
+          {
+            path:"/chart/:symbol",
+            element: (
+              <ProtectedRoute>
+                <ChartPage />
               </ProtectedRoute>
             )
           },
